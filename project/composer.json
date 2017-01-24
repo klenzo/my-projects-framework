@@ -1,0 +1,22 @@
+{
+    "name": "klenzo/projects-framework",
+    "type": "project",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "klenzo",
+            "email": "crea2luxe@gmail.com"
+        }
+    ],
+    
+    "autoload": { 
+        "psr-4": {
+            "App\\": "app/",
+            "App\\Classes\\": "app/class",
+            "App\\Controllers\\": "app/controllers",
+            "App\\Models\\": "app/models"
+        }
+    },
+
+    "require": {}
+}
