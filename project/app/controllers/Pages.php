@@ -2,12 +2,12 @@
 namespace App\Controllers;
 
 /**
-* 
+*
 */
 class Pages
 {
     protected $page_name;
-    protected $page_file;
+    protected $page_file = 'home';
     protected $page_title;
     protected $page_charset = 'utf-8';
     protected $page_description = '';
@@ -16,6 +16,8 @@ class Pages
     protected $page_showHeader = true;
     protected $page_showFooter = true;
 
+    protected $page_css = array();
+    protected $page_js = array();
     /**
      * Gets the value of page_name.
      *
@@ -204,6 +206,75 @@ class Pages
     protected function setPageCharset($page_charset)
     {
         $this->page_charset = $page_charset;
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of page_css.
+     *
+     * @return mixed
+     */
+    public function getPageCss()
+    {
+        $pageCss = '';
+        foreach ($this->page_css as $key => $value) {
+            if( is_int( $key ) ){ $id = ''; }else{ $id=' id="'. $key .'"'; }
+            $pageCss .= '<link rel="stylesheet" type="text/css"'. $id .' href="'. $value .'">';
+        }
+
+        return $pageCss;
+    }
+
+    /**
+     * Sets the value of page_css.
+     *
+     * @param mixed $page_css the page css
+     *
+     * @return self
+     */
+    protected function setPageCss($page_css, $append = true)
+    {
+        if( $append === true ){
+            $this->page_css = array_merge($this->page_css, $page_css);
+        }else{
+            $this->page_css = $page_css;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of page_js.
+     *
+     * @return mixed
+     */
+    public function getPageJs()
+    {
+
+        $pageJs = '';
+        foreach ($this->page_js as $key => $value) {
+            if( is_int( $key ) ){ $id = ''; }else{ $id=' id="'. $key .'"'; }
+            $pageJs .= '<script type="text/javascript"'. $id .' src="'. $value .'"></script>';
+        }
+
+        return $pageJs;
+    }
+
+    /**
+     * Sets the value of page_js.
+     *
+     * @param mixed $page_js the page js
+     *
+     * @return self
+     */
+    protected function setPageJs($page_js, $append = true)
+    {
+        if( $append === true ){
+            $this->page_js = array_merge($this->page_js, $page_js);
+        }else{
+            $this->page_js = $page_js;
+        }
 
         return $this;
     }

@@ -1,0 +1,24 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #F4F4F4;
+}
+.header {
+  background-color: #20b5f3;
+  height: 50px;
+  padding: 20px 10px;
+}
+.warp {
+  background-color: #FFF;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 1900px;
+}
+.footer {
+  background-color: #292929;
+  color: #FFF;
+  padding: 20px 10px;
+}

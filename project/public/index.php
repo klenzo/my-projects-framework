@@ -3,13 +3,13 @@
 
     require_once '../app/configs/global.php';
 
-    $_DB = new App\Classes\DataBase();
+    // $_DB = new App\Classes\DataBase();
 
-    $page = 'App\Controllers\\'. ucfirst('home');
+    $slugPage = \App\Classes\Pages::getSlug();
+    $page = 'App\Controllers\\'. ucfirst( $slugPage );
     $_PAGE = new $page();
-    //var_dump( $_PAGE );
 
 
-    include_once '../app/views/inc/head.php';
-    include_once '../app/views/'. $_PAGE->getPageFile() .'.php';
-    include_once '../app/views/inc/footer.php';
+    include_once APP_DIR .'/views/inc/head.php';
+    include_once APP_DIR .'/views/'. $_PAGE->getPageFile() .'.php';
+    include_once APP_DIR .'/views/inc/footer.php';

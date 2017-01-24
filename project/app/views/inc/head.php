@@ -3,6 +3,7 @@
 <head>
     <meta charset="<?= $_PAGE->getPageCharset(); ?>">
     <title><?= $_PAGE->getPageTitle(); ?></title>
+    <?= $_PAGE->getPageCss(); ?>
 </head>
 <body>
 
