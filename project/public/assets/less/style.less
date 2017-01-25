@@ -1,23 +1,41 @@
 *{padding:0; margin:0; box-sizing:border-box;}
 body{
     background-color: #F4F4F4;
+    font-family: sans-serif;
+    color: #292929;
 }
 
 .header{
-    background-color: rgba(32, 181, 243, 1);
     height: 50px;
     padding: 20px 10px;
 }
 
 .warp{
-    background-color: #FFF;
-    max-width: 1200px;
-    margin: 0 auto;
-    height: 1900px;
+    text-align: center;
+    padding: 20% 10%;
+    h1{
+        font-weight: 800;
+        font-size: 4em;
+        display: inline;
+        transition: color 0.5s;
+        &:hover strong { color: #C00; }
+    }
 }
 
+@media screen and (max-width: 600px) {
+    .warp h1{ font-size: 2.5em; }
+}
+
+
 .footer{
-    background-color: #292929;
-    color: #FFF;
+    text-align: center;
     padding: 20px 10px;
+    font-weight: 800;
+
+    a{ 
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.5s;
+        &:hover { color: #C00; } 
+    }
 }
