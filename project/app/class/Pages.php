@@ -6,48 +6,46 @@ namespace App\Classes;
  */
 class Pages
 {
-    static $defaultPage = 'home';
+    public static $defaultPage = 'home';
 
-    static public function getSlug()
+    public static function getSlug()
     {
         $pageSlug = self::$defaultPage;
 
-        if( isset( $_GET['page'] ) && !empty( $_GET['page'] ) && preg_match(REGEX_PAGE, $_GET['page']) ){
-            $filePath = CONTROLLERS_DIR . '/'. ucfirst( $_GET['page'] ) .'.php';
-            if( file_exists( $filePath )  ){
+        if (isset($_GET['page']) && !empty($_GET['page']) && preg_match(REGEX_PAGE, $_GET['page'])) {
+            $filePath = CONTROLLERS_DIR . '/'. ucfirst($_GET['page']) .'.php';
+            if (file_exists($filePath)) {
                 $pageSlug = strtolower($_GET['page']);
-            }else{
+            } else {
                 $pageSlug = 'E404';
             }
         }
         return $pageSlug;
     }
 
-    static public function getPost($item = false)
+    public static function getPost($item = false)
     {
-        if( $item ){
-            if( isset( $_POST[$item] ) ){
+        if ($item) {
+            if (isset($_POST[$item])) {
                 return $_POST[$item];
-            }else {
+            } else {
                 return array();
             }
-        }else{
+        } else {
             return $_POST;
         }
     }
 
-    static public function getGet($item = false)
+    public static function getGet($item = false)
     {
-        if( $item ){
-            if( isset( $_GET[$item] ) ){
+        if ($item) {
+            if (isset($_GET[$item])) {
                 return $_GET[$item];
-            }else {
+            } else {
                 return array();
             }
-        }else{
+        } else {
             return $_GET;
         }
     }
-
-
 }

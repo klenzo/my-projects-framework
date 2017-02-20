@@ -2,11 +2,11 @@
 namespace App\Controllers;
 
 /**
-* 
+*
 */
 class Home extends \App\Controllers\Pages
 {
-    function __construct()
+    public function __construct()
     {
         $this->init();
     }

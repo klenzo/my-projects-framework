@@ -21,13 +21,25 @@ class DataBase
         $this->DB_PASSWORD = DB_PASSWORD;
         $this->DB_PREFIX = DB_PREFIX;
 
-        if( is_array($DB) ){
-            if( isset( $DB['HOST'] ) ){ $this->DB_HOST = $DB['HOST']; }
-            if( isset( $DB['NAME'] ) ){ $this->DB_NAME = $DB['NAME']; }
-            if( isset( $DB['CHARSET'] ) ){ $this->DB_CHARSET = $DB['CHARSET']; }
-            if( isset( $DB['USER'] ) ){ $this->DB_USER = $DB['USER']; }
-            if( isset( $DB['PASSWORD'] ) ){ $this->DB_PASSWORD = $DB['PASSWORD']; }
-            if( isset( $DB['PREFIX'] ) ){ $this->DB_PREFIX = $DB['PREFIX']; }
+        if (is_array($DB)) {
+            if (isset($DB['HOST'])) {
+                $this->DB_HOST = $DB['HOST'];
+            }
+            if (isset($DB['NAME'])) {
+                $this->DB_NAME = $DB['NAME'];
+            }
+            if (isset($DB['CHARSET'])) {
+                $this->DB_CHARSET = $DB['CHARSET'];
+            }
+            if (isset($DB['USER'])) {
+                $this->DB_USER = $DB['USER'];
+            }
+            if (isset($DB['PASSWORD'])) {
+                $this->DB_PASSWORD = $DB['PASSWORD'];
+            }
+            if (isset($DB['PREFIX'])) {
+                $this->DB_PREFIX = $DB['PREFIX'];
+            }
         }
     }
 
@@ -63,8 +75,8 @@ class DataBase
             $req = $this->PDO->query($statement);
         }
 
-        if( $return ){
-            switch ( strtolower( $return ) ) {
+        if ($return) {
+            switch (strtolower($return)) {
                 case 'object':
                     return $req->fetchObject();
                     break;
@@ -73,9 +85,8 @@ class DataBase
                     return $req->fetchAll();
                     break;
             }
-        }else{
+        } else {
             return $req;
         }
-
     }
 }

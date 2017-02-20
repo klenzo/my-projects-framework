@@ -219,7 +219,11 @@ class Pages
     {
         $pageCss = '';
         foreach ($this->page_css as $key => $value) {
-            if( is_int( $key ) ){ $id = ''; }else{ $id=' id="'. $key .'"'; }
+            if (is_int($key)) {
+                $id = '';
+            } else {
+                $id=' id="'. $key .'"';
+            }
             $pageCss .= '<link rel="stylesheet" type="text/css"'. $id .' href="'. $value .'">';
         }
 
@@ -235,9 +239,9 @@ class Pages
      */
     protected function setPageCss($page_css, $append = true)
     {
-        if( $append === true ){
+        if ($append === true) {
             $this->page_css = array_merge($this->page_css, $page_css);
-        }else{
+        } else {
             $this->page_css = $page_css;
         }
 
@@ -251,10 +255,13 @@ class Pages
      */
     public function getPageJs()
     {
-
         $pageJs = '';
         foreach ($this->page_js as $key => $value) {
-            if( is_int( $key ) ){ $id = ''; }else{ $id=' id="'. $key .'"'; }
+            if (is_int($key)) {
+                $id = '';
+            } else {
+                $id=' id="'. $key .'"';
+            }
             $pageJs .= '<script type="text/javascript"'. $id .' src="'. $value .'"></script>';
         }
 
@@ -270,9 +277,9 @@ class Pages
      */
     protected function setPageJs($page_js, $append = true)
     {
-        if( $append === true ){
+        if ($append === true) {
             $this->page_js = array_merge($this->page_js, $page_js);
-        }else{
+        } else {
             $this->page_js = $page_js;
         }
 

@@ -7,4 +7,6 @@
 </head>
 <body>
 
-<?php if( $_PAGE->getPageShowHeader() ){ include_once 'header.php'; } ?>
+<?php if ($_PAGE->getPageShowHeader()) {
+    include_once 'header.php';
+} ?>

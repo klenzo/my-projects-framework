@@ -1,5 +1,5 @@
 <?php
-    define('APP_DIR', dirname( __DIR__ ) );
+    define('APP_DIR', dirname(__DIR__));
         define('CLASS_DIR', APP_DIR .'/class');
         define('CONFIGS_DIR', APP_DIR .'/configs');
         define('CONTROLLERS_DIR', APP_DIR .'/controllers');

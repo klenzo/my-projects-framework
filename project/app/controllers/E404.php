@@ -6,7 +6,7 @@ namespace App\Controllers;
 */
 class E404 extends \App\Controllers\Pages
 {
-    function __construct()
+    public function __construct()
     {
         $this->init();
     }
