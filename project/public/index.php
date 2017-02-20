@@ -9,7 +9,6 @@
     $page = 'App\Controllers\\'. ucfirst( $slugPage );
     $_PAGE = new $page();
 
-
     include_once APP_DIR .'/views/inc/head.php';
     include_once APP_DIR .'/views/'. $_PAGE->getPageFile() .'.php';
     include_once APP_DIR .'/views/inc/footer.php';
