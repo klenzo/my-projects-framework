@@ -8,6 +8,7 @@ class Pages
 {
     protected $page_name;
     protected $page_file = 'home';
+    protected $page_slug = 'home';
     protected $page_title;
     protected $page_charset = 'utf-8';
     protected $page_description = '';
@@ -299,6 +300,30 @@ class Pages
         } else {
             $this->page_js = $page_js;
         }
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of page_slug.
+     *
+     * @return mixed
+     */
+    public function getPageSlug()
+    {
+        return $this->page_slug;
+    }
+
+    /**
+     * Sets the value of page_slug.
+     *
+     * @param mixed $page_slug the page slug
+     *
+     * @return self
+     */
+    protected function setPageSlug($page_slug)
+    {
+        $this->page_slug = $page_slug;
 
         return $this;
     }
