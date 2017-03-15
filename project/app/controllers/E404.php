@@ -6,11 +6,6 @@ namespace App\Controllers;
 */
 class E404 extends \App\Controllers\Pages
 {
-    public function __construct()
-    {
-        $this->init();
-    }
-
     public function init()
     {
         $this->setPageName(__CLASS__);

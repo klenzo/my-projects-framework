@@ -18,6 +18,23 @@ class Pages
 
     protected $page_css = array();
     protected $page_js = array();
+
+    public function __construct()
+    {
+        $this->init();
+
+        $this->setPageCss([
+            'font-awesome' => '/assets/lib/font-awesome/css/font-awesome.min.css',
+            '/assets/css/style.css'
+        ]);
+
+        $this->setPageJs([
+            'jQuery' => '/assets/lib/jquery.js',
+            '/assets/js/app.js'
+        ]);
+    }
+
+
     /**
      * Gets the value of page_name.
      *
