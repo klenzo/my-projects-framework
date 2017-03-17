@@ -7,8 +7,8 @@ namespace App\Controllers;
 class Pages
 {
     protected $page_name;
-    protected $page_file = 'home';
-    protected $page_slug = 'home';
+    protected $page_file;
+    protected $page_slug;
     protected $page_title;
     protected $page_charset = 'utf-8';
     protected $page_description = '';
@@ -22,6 +22,9 @@ class Pages
 
     public function __construct()
     {
+        $this->page_file = PAGE_ROOT;
+        $this->page_slug = PAGE_ROOT;
+
         $this->init();
 
         $this->setPageCss([

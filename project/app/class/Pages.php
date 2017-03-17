@@ -6,18 +6,21 @@ namespace App\Classes;
  */
 class Pages
 {
-    public static $defaultPage = 'home';
-
     public static function getSlug()
     {
-        $pageSlug = self::$defaultPage;
+        $pageSlug = PAGE_ROOT;
 
         if (isset($_GET['page']) && !empty($_GET['page']) && preg_match(REGEX_PAGE, $_GET['page'])) {
             $filePath = CONTROLLERS_DIR . '/'. ucfirst($_GET['page']) .'.php';
             if (file_exists($filePath)) {
                 $pageSlug = strtolower($_GET['page']);
             } else {
-                $pageSlug = 'E404';
+                $filePath = VIEWS_DIR . '/'. strtolower($_GET['page']) .'.php';
+                if( file_exists($filePath) ){
+                    $pageSlug = 'GlobalControllers';
+                }else{
+                    $pageSlug = PAGE_404;
+                }
             }
         }
         return $pageSlug;
