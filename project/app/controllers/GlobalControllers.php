@@ -18,7 +18,8 @@ class GlobalControllers extends \App\Controllers\Pages
         $this->setPageName(__CLASS__);
         $this->setPageFile( $this->getRooterFile() );
         $this->setPageSlug( $this->getRooterSlug() );
-        $this->setPageTitle( $this->getRooterTitle() );
+        $this->setPageTitle( 'l.21 - GlobalControllers.php' );
+        // $this->setPageTitle( $this->getRooterTitle() );
     }
 
     /**
