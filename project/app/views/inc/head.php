@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="<?= $_PAGE->getPageCharset(); ?>">
-    <title><?= $_PAGE->getPageTitle(); ?></title>
-    <?= $_PAGE->getPageCss(); ?>
+    <meta charset="<?= getPage('charset'); ?>">
+    <title><?= getPage('title'); ?></title>
+    <?php getCSS(); ?>
 </head>
 <body>
 
-<?php if ($_PAGE->getPageShowHeader()) {
-    include_once 'header.php';
-} ?>
+<?php getHeader(); ?>

@@ -6,6 +6,8 @@ namespace App\Controllers;
 */
 class Pages
 {
+    const MINIFY_HTML = true;
+
     protected $page_name;
     protected $page_file;
     protected $page_slug;
@@ -15,7 +17,9 @@ class Pages
     protected $page_keywords = '';
 
     protected $page_showHeader = true;
+    protected $page_header = 'header';
     protected $page_showFooter = true;
+    protected $page_footer = 'footer_content';
 
     protected $page_css = array();
     protected $page_js = array();
@@ -36,6 +40,17 @@ class Pages
             'jQuery' => '/assets/lib/jquery.js',
             '/assets/js/app.js'
         ]);
+    }
+
+    public function getPageInfo($value)
+    {
+        $value = strtolower($value);
+        if (is_string($value)) {
+            $value = 'page_'.$value;
+            return $this->$value;
+        }
+        
+        return false;
     }
 
 
@@ -327,6 +342,54 @@ class Pages
     protected function setPageSlug($page_slug)
     {
         $this->page_slug = $page_slug;
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of page_header.
+     *
+     * @return mixed
+     */
+    public function getFileHeader()
+    {
+        return $this->page_header;
+    }
+
+    /**
+     * Sets the value of page_header.
+     *
+     * @param mixed $page_header the file header
+     *
+     * @return self
+     */
+    protected function setFileHeader($page_header)
+    {
+        $this->page_header = $page_header;
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of page_footer.
+     *
+     * @return mixed
+     */
+    public function getFileFooter()
+    {
+        return $this->page_footer;
+    }
+
+    /**
+     * Sets the value of page_footer.
+     *
+     * @param mixed $page_footer the file footer
+     *
+     * @return self
+     */
+    protected function setFileFooter($page_footer)
+    {
+        $this->page_footer = $page_footer;
 
         return $this;
     }

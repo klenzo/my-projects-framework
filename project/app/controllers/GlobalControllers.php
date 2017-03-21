@@ -13,12 +13,12 @@ class GlobalControllers extends \App\Controllers\Pages
 
     public function init()
     {
-        $this->setRooter( \App\Classes\Pages::getGet('page') );
+        $this->setRooter(\App\Classes\Pages::getGet('page'));
 
         $this->setPageName(__CLASS__);
-        $this->setPageFile( $this->getRooterFile() );
-        $this->setPageSlug( $this->getRooterSlug() );
-        $this->setPageTitle( 'l.21 - GlobalControllers.php' );
+        $this->setPageFile($this->getRooterFile());
+        $this->setPageSlug($this->getRooterSlug());
+        $this->setPageTitle('l.21 - GlobalControllers.php');
         // $this->setPageTitle( $this->getRooterTitle() );
     }
 
@@ -41,15 +41,19 @@ class GlobalControllers extends \App\Controllers\Pages
      * @return self
      */
     protected function setRooter($rooter, $append = true)
-    {   
-        if( empty( $rooter ) ){ throw new \Exception(ex0001E); }
-        if( ! is_array( $rooter ) ){ $rooter = array($rooter); }
+    {
+        if (empty($rooter)) {
+            throw new \Exception(ex0001E);
+        }
+        if (! is_array($rooter)) {
+            $rooter = array($rooter);
+        }
 
         foreach ($rooter as $key => $value) {
-            if( is_int( $key ) ){
+            if (is_int($key)) {
                 $slug = $value;
-                $file = $value; 
-            }else{
+                $file = $value;
+            } else {
                 $slug = $key;
                 $file = $value;
             }

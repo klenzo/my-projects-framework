@@ -5,4 +5,6 @@
     require_once 'db.php';
     require_once 'pattern_regex.php';
 
+    require_once APP_DIR .'/functions.php';
+
     require '../vendor/autoload.php';

@@ -1,6 +1,6 @@
-<?php if ($_PAGE->getPageShowFooter()) {
-    include_once 'footer_content.php';
-} ?>
-<?= $_PAGE->getPageJs(); ?>
+<?php
+    getFooter();
+    getJS();
+?>
 </body>
 </html>

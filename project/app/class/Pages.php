@@ -16,9 +16,9 @@ class Pages
                 $pageSlug = strtolower($_GET['page']);
             } else {
                 $filePath = VIEWS_DIR . '/'. strtolower($_GET['page']) .'.php';
-                if( file_exists($filePath) ){
+                if (file_exists($filePath)) {
                     $pageSlug = 'GlobalControllers';
-                }else{
+                } else {
                     $pageSlug = PAGE_404;
                 }
             }

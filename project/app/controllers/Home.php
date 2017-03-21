@@ -11,5 +11,7 @@ class Home extends \App\Controllers\Pages
         $this->setPageName(__CLASS__);
         $this->setPageFile('home');
         $this->setPageTitle('Accueil');
+
+        $this->setPageShowHeader(false);
     }
 }

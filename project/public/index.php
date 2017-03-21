@@ -8,6 +8,14 @@
 
     $_PAGE = new $page();
 
-    include_once APP_DIR .'/views/inc/head.php';
-    include_once APP_DIR .'/views/'. $_PAGE->getPageFile() .'.php';
-    include_once APP_DIR .'/views/inc/footer.php';
+ob_start();
+    includeFile('head');
+    include_once VIEWS_DIR .'/'. getPage('file') .'.php';
+    includeFile('footer');
+$html = ob_get_clean();
+
+if ($_PAGE::MINIFY_HTML) {
+    echo sanitize_output($html);
+} else {
+    echo $html;
+}

@@ -13,8 +13,8 @@ class Model
 
     public function VerifDB()
     {
-        if( ! $DB ){
-            $this->DB = new App\Classes\DataBase();        
+        if (! $this->DB) {
+            $this->DB = new App\Classes\DataBase();
         }
     }
 
