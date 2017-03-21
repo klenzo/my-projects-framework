@@ -21,6 +21,7 @@ class DataBase
         $this->setDBPASSWORD(DB_PASSWORD);
         $this->setDBPREFIX(DB_PREFIX);
 
+
         if (is_array($DB)) {
             if (isset($DB['HOST'])) {
                 $this->setDBHOST($DB['HOST']);
