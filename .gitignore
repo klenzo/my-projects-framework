@@ -1,7 +1,7 @@
 /project/composer.phar
 /project/composer.lock
 /project/vendor/
-/project/app/configs/db.php
+# /project/app/configs/db.php
 /project/.php_cs.cache
 
 
